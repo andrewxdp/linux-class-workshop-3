@@ -1,0 +1,10 @@
+void setup() {
+  pinMode(2, OUTPUT);   // ใช้ GPIO 2 ของ ESP32 (LED บนบอร์ด)
+}
+
+void loop() {
+  digitalWrite(2, HIGH);   // เปิดไฟ
+  delay(500);              // รอ 0.5 วินาที
+  digitalWrite(2, LOW);    // ปิดไฟ
+  delay(500);              // รอ 0.5 วินาที
+}
