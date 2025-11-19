@@ -1,10 +1,17 @@
+#define LED_PIN 2
+
 void setup() {
-  pinMode(2, OUTPUT);   // ใช้ GPIO 2 ของ ESP32 (LED บนบอร์ด)
+  pinMode(LED_PIN, OUTPUT);   // ตั้งขา GPIO 2 เป็น OUTPUT
+  Serial.begin(115200);       // เริ่ม Serial Debug
+  Serial.println("=== ESP32 Blink LED with Debug ===");
 }
 
 void loop() {
-  digitalWrite(2, HIGH);   // เปิดไฟ
-  delay(500);              // รอ 0.5 วินาที
-  digitalWrite(2, LOW);    // ปิดไฟ
-  delay(500);              // รอ 0.5 วินาที
+  digitalWrite(LED_PIN, HIGH);   // เปิดไฟ
+  Serial.println("LED ON");      // Debug message
+  delay(500);                     // รอ 0.5 วินาที
+
+  digitalWrite(LED_PIN, LOW);    // ปิดไฟ
+  Serial.println("LED OFF");      // Debug message
+  delay(500);                     // รอ 0.5 วินาที
 }
